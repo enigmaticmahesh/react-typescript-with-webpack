@@ -40,4 +40,12 @@ After this we need to configure babel with webpack in **webpack.config.js**. We 
 
 We have also to let know the babel that we need to transpile JSX to JS. And for that we had to add **@babel/preset-react** in the **babel.config.json** file as Babel will only convert the newer JS to older one unless we tell it to convert JSX to JS as well. And, we can do that by adding this package to the **presets** key in the config.json file of babel.
 
-Now, we can write the basic React imports in **main.js** file and import **App.jsx** in it. The same old React imports. The only thing that we are replacing is the **index.js** file that every React app have with **main.js**. Because we have defined main.js to be the entry point using webpack. If we change it to index.js also, it would be fine. Now, we can run the React app succesfully using Webpack and Babel
+Now, we can write the basic React imports in **main.js** file and import **App.jsx** in it. The same old React imports. The only thing that we are replacing is the **index.js** file that every React app have with **main.js**. Because we have defined main.js to be the entry point using webpack. If we change it to index.js also, it would be fine. Now, we can run the React app succesfully using Webpack and Babel.
+
+As we are going to write in the new version of JS, specifically ES6+ code, we need to convert it to older version of JS(ES5-). As some of the older browsers may not support. So, I added the following packages:
+
+- **@babel/preset-env**: Most of the polyfills are supported by this package, which means most of the new JS code can be converted by this.
+- **core-js**: This is also a polyfill generator which converts newer js. This is added for additional support as the above package supports most of the newer JS but not all so, whichever is missed by it, this package may have that. If both of them does not have polyfill for some code then we have to depend on some plugins.
+- **regenerator-runtime**: This is for Promise
+
+We can add configurations in the **babel.config.json** file for these packages.
