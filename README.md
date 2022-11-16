@@ -1,5 +1,7 @@
 ### Initial Setup with Webpack
 
+---
+
 I started by creating a directory and then used **yarn** as a package manager inside the folder/directory to start the application.
 
 - `yarn init`
@@ -28,6 +30,8 @@ Until this... a simple module bundler with webpack and can be served using html 
 
 ### Introduction to React
 
+---
+
 Now, it's time fo **React** to introduce.
 For, React to work we need **babel**, which is a transpiler that transpiles **newer JS to older JS** which the Browser can understand. Also, **JSX to normal JS** bcoz this is also need to be understood by Browser. As the **import** statements cannot be understood by Browser. For this, I installed these:
 
@@ -47,6 +51,8 @@ We have also to let know the babel that we need to transpile JSX to JS. And for 
 Now, we can write the basic React imports in **main.js** file and import **App.jsx** in it. The same old React imports. The only thing that we are replacing is the **index.js** file that every React app have with **main.js**. Because we have defined main.js to be the entry point using webpack. If we change it to index.js also, it would be fine. Now, we can run the React app succesfully using Webpack and Babel.
 
 ### Support for Older environments by using Polyfill generators
+
+---
 
 As we are going to write in the new version of JS, specifically ES6+ code, we need to convert it to older version of JS(ES5-). As some of the older browsers may not support. So, I added the following packages:
 
