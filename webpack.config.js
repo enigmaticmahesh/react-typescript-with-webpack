@@ -20,9 +20,16 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.(ts)x?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
+        },
+      },
     ],
   },
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.jsx', '.js', '.tsx', '.ts'],
   },
 };
