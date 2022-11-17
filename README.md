@@ -61,3 +61,19 @@ As we are going to write in the new version of JS, specifically ES6+ code, we ne
 - **regenerator-runtime**: This is for Promise
 
 We can add configurations in the **babel.config.json** file for these packages.
+
+### Support for Typescript
+
+---
+
+Added some packages for supporting typescript by our application.
+
+- **typescript**: For typescript
+- **ts-loader**: For integrating with webpack as we did for babel-loader
+- **@types/react and @types/react-dom**: Type definitions for react and react-dom. Required as we are using typescript.
+
+1. Added configuration for integrating typescript with webpack, as we did in case of babel-loader.
+2. Added typescript configuration in **tsconfig.json**
+   - All other keys are self explanatory, I am letting you know the ones that are not.
+   - **allowSyntheticDefaultImports**: This is the one which helps in writing `import React from "react";` instead of `import * as React from "react";`
+   - Other configs can be viewed [here](https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports)
